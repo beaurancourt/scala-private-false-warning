@@ -1,6 +1,6 @@
 import scala.collection.mutable.ListBuffer
 
-class Bar {
+trait Foo {
 	private var appendedStrings: ListBuffer[String] = ListBuffer("a")
 
 	private def appendString(str: String) {
@@ -13,6 +13,8 @@ class Bar {
     appendedStrings.foldLeft("")(_ + _)
   }
 }
+
+class Bar extends Foo
 
 object Main extends App {
   val bar = new Bar
